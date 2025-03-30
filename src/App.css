@@ -1,0 +1,11 @@
+#root {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-top: 20px;
+  padding-bottom: 64px;
+  /* text-align: center; */
+}
+
+button {
+    cursor: pointer;
+}

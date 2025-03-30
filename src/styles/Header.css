@@ -1,0 +1,13 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.light-logo {
+    background-color: #000;
+}
+
+.dark-logo {
+    background-color: #fff;
+}
