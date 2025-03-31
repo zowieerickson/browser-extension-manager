@@ -3,6 +3,11 @@
   line-height: 1.5;
   font-weight: 400;
 
+  color: var(--text-color);
+  --header-bg-color: #FBFDFE;
+  --page-bg-color: linear-gradient(#EBF2FC, #EEFBF9);
+
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,14 +20,15 @@
   }
 
 .dark-mode {
-    --bg-color: linear-gradient(#04091B, #091540);
+    --page-bg-color: linear-gradient(#04091B, #091540);
     --text-color: #FBFDFE;
     --bg-color-secondary: #202535;
+    --header-bg-color: #202535;
 }
 
 body {
   min-height: 100vh;
-  background: var(--bg-color);
   color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
+  background: var(--page-bg-color);
 }
