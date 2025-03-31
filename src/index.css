@@ -3,13 +3,26 @@
   line-height: 1.5;
   font-weight: 400;
 
-  /* color-scheme: light dark; */
-  color: rgba(255, 255, 255, 0.87);
-  background: linear-gradient(#EBF2FC, #EEFBF9);
-  min-height: 100vh;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* For theme toggle */
+* {
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+
+.dark-mode {
+    --bg-color: linear-gradient(#04091B, #091540);
+    --text-color: #FBFDFE;
+    --bg-color-secondary: #202535;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s ease, color 0.3s ease;
 }

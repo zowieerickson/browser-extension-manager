@@ -1,13 +1,22 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import darkThemeLogo from '../assets/images/icon-moon.svg'
 import lightThemeLogo from '../assets/images/icon-sun.svg'
 
-export default function ThemeToggle() {
-    const [isDarkMode, setIsDarkMode] = useState(true)
+export default function ThemeToggle({ isDarkMode, setIsDarkMode }) {
+    const [bodyClass, setBodyClass] = useState('')
+    console.log(isDarkMode)
 
     const handleThemeToggle = function() {
-        setIsDarkMode((prev) => !prev);
+        setIsDarkMode((prev) => !prev)
+        // isDarkMode ? setIsDarkMode(false) : setIsDarkMode(true)
+        console.log(isDarkMode)
+        isDarkMode ? setBodyClass('') : setBodyClass('dark-mode')
     }
+
+    useEffect(() => {
+        document.body.className = bodyClass;
+
+    }, [bodyClass])
 
     return (
         <>
