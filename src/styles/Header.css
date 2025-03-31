@@ -10,9 +10,16 @@ header {
     box-shadow: 0px 2px 3px #D9E5F4;
 }
 
+header a {
+    display: flex;
+    align-items: center;
+}
+
 .logo {
+    display: flex;
     border: none;
     border-radius: 12px;
+    padding: 14px;
 }
 
 .light-logo {
