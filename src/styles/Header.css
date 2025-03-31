@@ -2,6 +2,16 @@
 header {
     display: flex;
     justify-content: space-between;
+
+    background-color: #FBFDFE;
+    padding: 12px 16px;
+    border-radius: 20px;
+    border: 1px solid #D6E2F5;
+    box-shadow: 0px 2px 3px #D9E5F4;
+}
+
+.logo {
+    border: none
 }
 
 .light-logo {
@@ -9,5 +19,5 @@ header {
 }
 
 .dark-logo {
-    background-color: #fff;
+    background-color: #eee;
 }

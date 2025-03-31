@@ -11,7 +11,7 @@ export default function ThemeToggle() {
 
     return (
         <>
-            <button onClick={handleThemeToggle} className={isDarkMode ? 'light-logo' : 'dark-logo'}>
+            <button onClick={handleThemeToggle} className={`logo ${isDarkMode ? 'light-logo' : 'dark-logo'}`}>
                 <img src={isDarkMode ? lightThemeLogo : darkThemeLogo} alt="" />
             </button>
         </>
