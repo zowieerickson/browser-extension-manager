@@ -6,10 +6,15 @@ console.log(data)
 export default function ExtensionCard() {
     const items = data.map(item =>
         <article key={item.name} className='extension card'>
-            <img src={item.logo} />
-            <div className='card-copy'>
-                <h3>{item.name}</h3>
-                <p>{item.description}</p>
+            <div className='card-info'>
+                <img src={item.logo} />
+                <div className='card-copy'>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                </div>
+            </div>
+            <div className='card-settings'>
+
             </div>
         </article>
     )

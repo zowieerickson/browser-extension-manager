@@ -11,6 +11,11 @@
     border-radius: 20PX;
 }
 
+.card-info {
+    display: flex;
+    align-items: flex-start;
+}
+
 .card-copy {
 
 }
