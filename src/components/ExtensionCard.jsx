@@ -14,7 +14,8 @@ export default function ExtensionCard() {
                 </div>
             </div>
             <div className='card-settings'>
-
+                <button className='btn-remove'>Remove</button>
+                <p>Insert toggle here</p>
             </div>
         </article>
     )
