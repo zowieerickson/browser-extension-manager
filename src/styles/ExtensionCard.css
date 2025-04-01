@@ -4,6 +4,9 @@
     grid-gap: 12px;
 }
 
+.extensions-list-title {
+    margin-bottom: 32px;
+}
 
 .card {
     background-color: #FBFDFE;

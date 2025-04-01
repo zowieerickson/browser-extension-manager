@@ -1,10 +1,16 @@
+import { useState } from 'react';
 import data from '../data.json';
 import '../styles/ExtensionCard.css'
-console.log(data)
-
 
 export default function ExtensionCard() {
-    const items = data.map(item =>
+    const [extensions, setExtensions] = useState(data)
+
+    const deleteExtension = (id) => {
+        setExtensions(extensions.filter((extension) => extension.name !== id))
+    }
+
+
+    const items = extensions.map(item =>
         <article key={item.name} className='extension card'>
             <div className='card-info'>
                 <img src={item.logo} />
@@ -14,7 +20,7 @@ export default function ExtensionCard() {
                 </div>
             </div>
             <div className='card-settings'>
-                <button className='btn-remove'>Remove</button>
+                <button onClick={() => deleteExtension(item.name)} className='btn-remove'>Remove</button>
                 <p>Insert toggle here</p>
             </div>
         </article>
@@ -22,8 +28,8 @@ export default function ExtensionCard() {
     
     return (
         <>
-            <h1>Extensions List</h1>
-            <section className="extensions-list">{items}</section>
+            <h1 className='extensions-list-title'>Extensions List</h1>
+            <section className='extensions-list'>{items}</section>
         </>
     )
 }
