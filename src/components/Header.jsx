@@ -1,4 +1,5 @@
-import appLogo from '../assets/images/logo.svg'
+// import appLogo from '../../public/assets/images/logo.svg'
+import appLogo from '../../public/assets/images/logo.svg'
 import '../styles/Header.css'
 import PageTitle from './PageTitle'
 import ThemeToggle from './ThemeToggle'

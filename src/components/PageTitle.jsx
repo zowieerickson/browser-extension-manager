@@ -1,5 +1,3 @@
-import appLogo from '../assets/images/logo.svg'
-
 function LogoIcon({ textColor = 'pink'  }) {
 
     return (
@@ -11,7 +9,6 @@ function LogoIcon({ textColor = 'pink'  }) {
 export default function PageTitle( {isDarkMode} ) {
     return (
         <a href="/">
-            {/* <img src={appLogo} alt="Extensions app logo" /> */}
             <LogoIcon textColor={isDarkMode ? "#fff" : "#091540"} />
         </a>
     )

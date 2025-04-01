@@ -6,6 +6,7 @@
   color: var(--text-color);
   --header-bg-color: #FBFDFE;
   --page-bg-color: linear-gradient(#EBF2FC, #EEFBF9);
+  --bg-color-secondary: #D6E2F5;
 
 
   font-synthesis: none;

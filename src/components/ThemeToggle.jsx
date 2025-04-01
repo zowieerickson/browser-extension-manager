@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import darkThemeLogo from '../assets/images/icon-moon.svg'
-import lightThemeLogo from '../assets/images/icon-sun.svg'
+import darkThemeLogo from '../../public/assets/images/icon-moon.svg'
+import lightThemeLogo from '../../public/assets/images/icon-sun.svg'
 
 export default function ThemeToggle({ isDarkMode, setIsDarkMode }) {
     const [bodyClass, setBodyClass] = useState('')
