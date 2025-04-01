@@ -16,7 +16,7 @@
 }
 
 .card-info img {
-    align-items: flex-start;
+    align-self: flex-start;
     margin-right: 16px;
 }
 
@@ -27,5 +27,18 @@
 .card-settings {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-top: 46px;
+}
+
+.extension .btn-remove {
+    background-color: inherit;
+    border: 1px solid #C6C6C6;
+    padding: 9px 16px;
+    border-radius: 20px;
+}
+
+.btn-remove:hover {
+    background-color: rgb(199, 35, 26);
+    color: #FBFDFE;
 }
