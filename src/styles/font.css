@@ -1,0 +1,23 @@
+/* Regular */
+@font-face {
+    font-family: 'NotoSans';
+    src: url('/assets/fonts/static/NotoSans-Regular.ttf') format('truetype');
+    font-weight: normal;  /* Regular weight */
+    font-style: normal;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'NotoSans';
+    src: url('/assets/fonts/static/NotoSans-Medium.ttf') format('truetype');
+    font-weight: 500;  /* Medium weight (numerical value) */
+    font-style: normal;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'NotoSans';
+    src: url('/assets/fonts/static/NotoSans-Bold.ttf') format('truetype');
+    font-weight: bold;  /* Bold weight */
+    font-style: normal;
+}

@@ -9,6 +9,10 @@
 }
 
 .card {
+    display: flex;
+    height: 200px;
+    justify-content: space-between;
+    flex-direction: column;
     background-color: #FBFDFE;
     padding: 20px;
     border-radius: 20PX;
@@ -31,7 +35,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 46px;
 }
 
 .extension .btn-remove {
