@@ -4,12 +4,9 @@ import lightThemeLogo from '../../public/assets/images/icon-sun.svg'
 
 export default function ThemeToggle({ isDarkMode, setIsDarkMode }) {
     const [bodyClass, setBodyClass] = useState('')
-    console.log(isDarkMode)
 
     const handleThemeToggle = function() {
         setIsDarkMode((prev) => !prev)
-        // isDarkMode ? setIsDarkMode(false) : setIsDarkMode(true)
-        console.log(isDarkMode)
         isDarkMode ? setBodyClass('') : setBodyClass('dark-mode')
     }
 

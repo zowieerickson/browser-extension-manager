@@ -9,6 +9,13 @@ export default function ExtensionCard() {
         setExtensions(extensions.filter((extension) => extension.name !== id))
     }
 
+    const toggleChecked = (id) => {
+        setExtensions(prevExtensions => 
+            prevExtensions.map(ext => {
+                return ext.name === id ? { ...ext, isActive: !ext.isActive } : ext
+            })
+        )
+    }
 
     const items = extensions.map(item =>
         <article key={item.name} className='extension card'>
@@ -21,7 +28,15 @@ export default function ExtensionCard() {
             </div>
             <div className='card-settings'>
                 <button onClick={() => deleteExtension(item.name)} className='btn-remove'>Remove</button>
-                <p>Insert toggle here</p>
+                <label className="switch">
+                    <input 
+                        onChange={() => toggleChecked(item.name)}
+                        type="checkbox"
+                        checked={item.isActive}
+                        id="check"
+                        className='toggle'/>
+                    <span className="slider"></span>
+                </label>
             </div>
         </article>
     )
