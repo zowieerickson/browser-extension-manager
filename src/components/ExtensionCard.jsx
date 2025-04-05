@@ -5,25 +5,19 @@ import '../styles/ExtensionCard.css'
 export default function ExtensionCard() {
     const [allExtensions, setAllExtensions] = useState(data)
     const [viewFilter, setViewFilter] = useState("all")
-    let arr = allExtensions
-
 
     const deleteExtension = (id) => {
-        console.log(viewFilter)
         setAllExtensions(allExtensions.filter((extension) => extension.name !== id))
     }
 
     const toggleChecked = (id) => {
         setAllExtensions(prevExtensions => 
             prevExtensions.map(ext => {
-                console.log(prevExtensions)
                 if (ext.name === id) {
-                    console.log(ext)
                     return {...ext, isActive: !ext.isActive}
                 } else {
                     return ext
                 }
-                // return ext.name === id ? { ...ext, isActive: !ext.isActive } : ext
             })
         )
     }
@@ -41,7 +35,7 @@ export default function ExtensionCard() {
     }
 
     const Items2 = function() {
-
+        let arr = allExtensions
         if (viewFilter === "all") {
             arr = allExtensions;
         } else if (viewFilter === "active") {
