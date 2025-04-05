@@ -9,7 +9,7 @@ export default function Header() {
     const [isDarkMode, setIsDarkMode] = useState(false)
 
     return (
-        <header>
+        <header className='page-header'>
             <PageTitle isDarkMode={isDarkMode}/>
             <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         </header>

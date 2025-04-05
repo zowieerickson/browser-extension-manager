@@ -1,3 +1,22 @@
+.extensions-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+    justify-content: space-between;
+}
+
+.extensions-header button {
+    background-color: #FBFDFE;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.extensions-header .btn-active {
+    background-color: #C7231A;
+    color:  #FBFDFE;
+}
+
 .extensions-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -5,7 +24,11 @@
 }
 
 .extensions-list-title {
-    margin-bottom: 32px;
+}
+
+.extension-controls {
+    display: flex;
+    gap: 12px
 }
 
 .card {

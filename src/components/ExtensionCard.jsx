@@ -75,11 +75,17 @@ export default function ExtensionCard() {
     
     return (
         <>
-            <h1 className='extensions-list-title'>Extensions List</h1>
-            <button onClick={handleAll}>All</button>
-            <button onClick={handleActive}>Active</button>
-            <button onClick={handleInactive}>Inactive</button>
-            <section className='extensions-list'><Items2/></section>
+            <header className='extensions-header'>
+                <h1 className='extensions-list-title'>Extensions List</h1>
+                <div className='extension-controls'>
+                    <button onClick={handleAll} className={viewFilter === "all" ? "btn-active" : ""}>All</button>
+                    <button onClick={handleActive} className={viewFilter === "active" ? "btn-active" : ""}>Active</button>
+                    <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : ""}>Inactive</button>
+                </div>
+            </header>
+            <section className='extensions-list'>
+                <Items2/>
+            </section>
         </>
     )
 }
