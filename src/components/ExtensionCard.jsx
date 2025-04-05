@@ -4,59 +4,54 @@ import '../styles/ExtensionCard.css'
 
 export default function ExtensionCard() {
     const [allExtensions, setAllExtensions] = useState(data)
-    const [visibleExtensions, setVisibleExtensions] = useState(data)
     const [viewFilter, setViewFilter] = useState("all")
+    let arr = allExtensions
+
 
     const deleteExtension = (id) => {
-        console.log(allExtensions)
-        console.log(id)
-        setVisibleExtensions(allExtensions.filter((extension) => extension.name !== id))
-        console.log(allExtensions)
-        console.log("trying to remove")
+        console.log(viewFilter)
+        setAllExtensions(allExtensions.filter((extension) => extension.name !== id))
     }
 
     const toggleChecked = (id) => {
-        setVisibleExtensions(prevExtensions => 
+        setAllExtensions(prevExtensions => 
             prevExtensions.map(ext => {
-                return ext.name === id ? { ...ext, isActive: !ext.isActive } : ext
+                console.log(prevExtensions)
+                if (ext.name === id) {
+                    console.log(ext)
+                    return {...ext, isActive: !ext.isActive}
+                } else {
+                    return ext
+                }
+                // return ext.name === id ? { ...ext, isActive: !ext.isActive } : ext
             })
         )
     }
 
-    let filteredList;
-
     const handleActive = function() {
         setViewFilter("active")
-        setVisibleExtensions(allExtensions)
-        filteredList = allExtensions.filter((ext) => {
-            return ext.isActive === true
-        })
-        setVisibleExtensions(filteredList)
     }
 
     const handleInactive = function() {
         setViewFilter("inactive")
-        setVisibleExtensions(allExtensions)
-        const filteredList = allExtensions.filter((ext) => {
-            return ext.isActive === false
-        })
-        setVisibleExtensions(filteredList)
     }
 
     const handleAll = function() {
         setViewFilter("all")
     }
 
-    const handleFilterSwitch = function() {
-        console.log("test")
-    }
-
     const Items2 = function() {
-        let arr;
+
         if (viewFilter === "all") {
-            arr = allExtensions
-        } else {
-            arr = visibleExtensions
+            arr = allExtensions;
+        } else if (viewFilter === "active") {
+            arr = allExtensions.filter((ext) => {
+                return ext.isActive === true
+            })
+        }  else if (viewFilter === "inactive") {
+            arr = allExtensions.filter((ext) => {
+                return ext.isActive === false
+            })
         }
 
         return arr.map(item =>
