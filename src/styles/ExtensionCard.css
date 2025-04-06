@@ -33,6 +33,10 @@
     gap: 12px
 }
 
+.extension-controls button {
+    font-weight: 500;
+}
+
 .card {
     display: flex;
     height: 200px;
