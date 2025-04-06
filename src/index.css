@@ -60,11 +60,13 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color: var(--text-color);
-  --header-bg-color: #FBFDFE;
+  --text-primary: #091540;
+  --text-secondary: #535868;
+  --text-inverse: #FBFDFE;
+  --bg-primary: #FBFDFE;
+  --bg-secondary: #C6C6C6;
+  --border: #D6E2F5;
   --page-bg-color: linear-gradient(#EBF2FC, #EEFBF9);
-  --bg-color-secondary: #D6E2F5;
-
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -78,15 +80,19 @@
   }
 
 .dark-mode {
-    --page-bg-color: linear-gradient(#04091B, #091540);
-    --text-color: #FBFDFE;
-    --bg-color-secondary: #202535;
-    --header-bg-color: #202535;
+  --text-primary: #FBFDFE;
+  --text-secondary: #C6C6C6;
+  --text-inverse: #091540;
+  --bg-primary: #202535;
+  --bg-secondary: #535868;
+  --border: #535868;
+  --text-color: #FBFDFE;
+
+  --page-bg-color: linear-gradient(#04091B, #091540);
 }
 
 body {
   min-height: 100vh;
-  color: var(--text-color);
   transition: background 0.3s ease, color 0.3s ease;
   background: var(--page-bg-color);
 }

@@ -6,7 +6,8 @@
 }
 
 .extensions-header button {
-    background-color: #FBFDFE;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
@@ -14,7 +15,7 @@
 
 .extensions-header .btn-active {
     background-color: #C7231A;
-    color:  #FBFDFE;
+    color: var(--text-inverse);
 }
 
 .extensions-list {
@@ -24,6 +25,7 @@
 }
 
 .extensions-list-title {
+    color: var(--text-primary)
 }
 
 .extension-controls {
@@ -37,8 +39,18 @@
     justify-content: space-between;
     flex-direction: column;
     background-color: #FBFDFE;
+    border: 1px solid var(--border);
     padding: 20px;
     border-radius: 20PX;
+    background-color: var(--bg-primary);
+}
+
+.card-copy h3 {
+    color: var(--text-primary);
+}
+
+.card-copy p {
+    color: var(--text-secondary);
 }
 
 .card-info {
@@ -50,10 +62,6 @@
     margin-right: 16px;
 }
 
-.card-info p {
-    color: #535868;
-}
-
 .card-settings {
     display: flex;
     justify-content: space-between;
@@ -61,8 +69,9 @@
 }
 
 .extension .btn-remove {
-    background-color: inherit;
-    border: 1px solid #C6C6C6;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
     padding: 9px 16px;
     border-radius: 20px;
 }
@@ -94,7 +103,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: var(--bg-secondary);
     -webkit-transition: .4s;
     transition: .4s;
 }
