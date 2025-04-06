@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { act, useState } from 'react';
 import data from '../data.json';
 import '../styles/ExtensionCard.css'
 
@@ -48,15 +48,25 @@ export default function ExtensionCard() {
             (viewFilter === "active" ? ext.isActive : !ext.isActive)
         );
 
+    const activeExtensionsList = allExtensions.filter(ext => {
+        return ext.isActive;
+    })
+
+    const inactiveExtensionsList = allExtensions.filter(ext => {
+        return !ext.isActive;
+    })
+
+    console.log(activeExtensionsList)
+
     
     return (
         <>
             <header className='extensions-header'>
                 <h1 className='extensions-list-title'>Extensions List</h1>
                 <div className='extension-controls'>
-                    <button onClick={handleAll} className={viewFilter === "all" ? "btn-active" : ""}>All</button>
-                    <button onClick={handleActive} className={viewFilter === "active" ? "btn-active" : ""}>Active</button>
-                    <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : ""}>Inactive</button>
+                    <button onClick={handleAll} className={viewFilter === "all" ? "btn-active" : ""}>All ({allExtensions.length})</button>
+                    <button onClick={handleActive} className={viewFilter === "active" ? "btn-active" : ""}>Active ({activeExtensionsList.length})</button>
+                    <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : ""}>Inactive ({inactiveExtensionsList.length})</button>
                 </div>
             </header>
             <section className='extensions-list'>
