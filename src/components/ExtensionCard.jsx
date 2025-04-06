@@ -5,12 +5,15 @@ import '../styles/ExtensionCard.css'
 export default function ExtensionCard() {
     const [allExtensions, setAllExtensions] = useState(data)
     const [viewFilter, setViewFilter] = useState("all")
+    const [justToggledId, setJustToggledId] = useState(null)
 
     const deleteExtension = (id) => {
         setAllExtensions(allExtensions.filter((extension) => extension.name !== id))
     }
 
     const toggleChecked = (id) => {
+        setJustToggledId(id)
+
         setAllExtensions(prevExtensions => 
             prevExtensions.map(ext => {
                 if (ext.name === id) {
@@ -20,6 +23,10 @@ export default function ExtensionCard() {
                 }
             })
         )
+
+        setTimeout(() => {
+            setJustToggledId(null)
+        }, 550)
     }
 
     const handleActive = function() {
@@ -34,44 +41,13 @@ export default function ExtensionCard() {
         setViewFilter("all")
     }
 
-    const Items2 = function() {
-        let arr = allExtensions
-        if (viewFilter === "all") {
-            arr = allExtensions;
-        } else if (viewFilter === "active") {
-            arr = allExtensions.filter((ext) => {
-                return ext.isActive === true
-            })
-        }  else if (viewFilter === "inactive") {
-            arr = allExtensions.filter((ext) => {
-                return ext.isActive === false
-            })
-        }
+    const filteredExtensions = viewFilter === "all"
+        ? allExtensions
+        : allExtensions.filter(ext =>
+            ext.name === justToggledId ||
+            (viewFilter === "active" ? ext.isActive : !ext.isActive)
+        );
 
-        return arr.map(item =>
-            <article key={item.name} className='extension card'>
-                <div className='card-info'>
-                    <img src={item.logo} />
-                    <div className='card-copy'>
-                        <h3>{item.name}</h3>
-                        <p>{item.description}</p>
-                    </div>
-                </div>
-                <div className='card-settings'>
-                    <button onClick={() => deleteExtension(item.name)} className='btn-remove'>Remove</button>
-                    <label className="switch">
-                        <input 
-                            onChange={() => toggleChecked(item.name)}
-                            type="checkbox"
-                            checked={item.isActive}
-                            id="check"
-                            className='toggle'/>
-                        <span className="slider"></span>
-                    </label>
-                </div>
-            </article>
-        )
-    }
     
     return (
         <>
@@ -84,8 +60,31 @@ export default function ExtensionCard() {
                 </div>
             </header>
             <section className='extensions-list'>
-                <Items2/>
+            {filteredExtensions.map(item => (
+                <article key={item.name} className='extension card'>
+                    <div className='card-info'>
+                        <img src={item.logo} />
+                        <div className='card-copy'>
+                            <h3>{item.name}</h3>
+                            <p>{item.description}</p>
+                        </div>
+                    </div>
+                    <div className='card-settings'>
+                        <button onClick={() => deleteExtension(item.name)} className='btn-remove'>Remove</button>
+                        <label className="switch">
+                            <input 
+                                onChange={() => toggleChecked(item.name)}
+                                type="checkbox"
+                                checked={item.isActive}
+                                id="check"
+                                className='toggle'/>
+                            <span className="slider"></span>
+                        </label>
+                    </div>
+                </article>
+            ))}
             </section>
+
         </>
     )
 }
