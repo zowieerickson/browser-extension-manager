@@ -65,6 +65,7 @@
   --text-inverse: #FBFDFE;
   --bg-primary: #FBFDFE;
   --bg-secondary: #C6C6C6;
+  --accent: #C7231A;
   --border: #D6E2F5;
   --page-bg-color: linear-gradient(#EBF2FC, #EEFBF9);
   --box-shadow-primary: 0px 2px 3px #D9E5F4;
@@ -80,12 +81,17 @@
     transition: background 0.3s ease, color 0.3s ease;
   }
 
+*:focus {
+  outline: 1px solid var(--accent)
+}
+
 .dark-mode {
   --text-primary: #FBFDFE;
   --text-secondary: #C6C6C6;
   --text-inverse: #091540;
   --bg-primary: #202535;
   --bg-secondary: #535868;
+  --accent: #F25C54;
   --border: #535868;
   --text-color: #FBFDFE;
   --box-shadow-primary: none;

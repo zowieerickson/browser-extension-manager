@@ -16,8 +16,9 @@
 }
 
 .extensions-header .btn-active {
-    background-color: #C7231A;
+    background-color: var(--accent);
     color: var(--text-inverse);
+    border: none;
 }
 
 .extensions-list {
@@ -125,7 +126,7 @@
   }
   
   input:checked + .slider {
-    background-color: #C7231A;
+    background-color: var(--accent);
   }
   
   input:focus + .slider {
