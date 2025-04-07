@@ -24,6 +24,7 @@
 
 .dark-mode .extensions-header button:hover {
     background-color: #535868;
+    opacity: 1;
 }
 
 .extensions-header .btn-active {
