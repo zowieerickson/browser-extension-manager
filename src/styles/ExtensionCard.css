@@ -8,9 +8,11 @@
 .extensions-header button {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    border: none;
+    border: 1px solid var(--border);
     padding: 10px 20px;
     border-radius: 20px;
+    font-weight: 500;
+    box-shadow: var(--box-shadow-primary);
 }
 
 .extensions-header .btn-active {
@@ -33,10 +35,6 @@
     gap: 12px
 }
 
-.extension-controls button {
-    font-weight: 500;
-}
-
 .card {
     display: flex;
     height: 200px;
@@ -47,6 +45,7 @@
     padding: 20px;
     border-radius: 20PX;
     background-color: var(--bg-primary);
+    box-shadow: var(--box-shadow-primary);
 }
 
 .card-copy h3 {

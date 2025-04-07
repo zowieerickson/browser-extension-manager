@@ -67,6 +67,7 @@
   --bg-secondary: #C6C6C6;
   --border: #D6E2F5;
   --page-bg-color: linear-gradient(#EBF2FC, #EEFBF9);
+  --box-shadow-primary: 0px 2px 3px #D9E5F4;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -87,6 +88,7 @@
   --bg-secondary: #535868;
   --border: #535868;
   --text-color: #FBFDFE;
+  --box-shadow-primary: none;
 
   --page-bg-color: linear-gradient(#04091B, #091540);
 }
