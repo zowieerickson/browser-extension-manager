@@ -13,12 +13,33 @@
     border-radius: 20px;
     font-weight: 500;
     box-shadow: var(--box-shadow-primary);
+    opacity: 1;
+    transition: opacity .4s ease, box-shadow .4s ease;
+}
+
+.extensions-header button:hover {
+    opacity: .70;
+    box-shadow: none;
+}
+
+.dark-mode .extensions-header button:hover {
+    background-color: #535868;
 }
 
 .extensions-header .btn-active {
     background-color: var(--accent);
     color: var(--text-inverse);
     border: none;
+    opacity: 1;
+}
+
+.extensions-header .btn-active:hover {
+    opacity: 1;
+}
+
+.dark-mode .extensions-header .btn-active:hover {
+    background-color: var(--accent);
+    opacity: 1;
 }
 
 .extensions-list {
@@ -81,8 +102,8 @@
 }
 
 .btn-remove:hover {
-    background-color: rgb(199, 35, 26);
-    color: #FBFDFE;
+    background-color: var(--accent);
+    color: var(--text-inverse);
 }
 
 .switch {
