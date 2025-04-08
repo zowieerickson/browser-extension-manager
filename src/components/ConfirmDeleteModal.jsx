@@ -1,8 +1,16 @@
 import "../styles/ConfirmDeleteModal.css"
 
 export default function ConfirmDeleteModal({title, message, onConfirm, onCancel} ) {
+    function handleOverlayClick(e) {
+        if (e.target === e.currentTarget) { // currentTarget is what the event listener is attached to
+            console.log('yo')
+            onCancel()
+        }
+    }
+
+
     return (
-        <div className="modal-overlay">
+        <div className="modal-overlay" onClick={handleOverlayClick}>
             <div className="modal-box">
                 <h2>{title}</h2>
                 <p>{message}</p>
