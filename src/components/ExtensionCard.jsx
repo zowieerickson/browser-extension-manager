@@ -92,7 +92,6 @@ export default function ExtensionCard() {
                         </div>
                     </div>
                     <div className='card-settings'>
-                        {/* <button onClick={() => deleteExtension(item.name)} className='btn-remove'>Remove</button> */}
                         <button onClick={() => checkIfDeleteExtension(item.name)} className='btn-remove'>Remove</button>
                         <label className="switch">
                             <input 
