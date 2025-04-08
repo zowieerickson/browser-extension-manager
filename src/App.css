@@ -7,4 +7,9 @@
 
 button {
     cursor: pointer;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    padding: 9px 16px;
+    border-radius: 20px;
 }
