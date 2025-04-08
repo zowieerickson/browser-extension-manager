@@ -2,6 +2,7 @@ import { useState } from 'react';
 import data from '../data.json';
 import '../styles/ExtensionCard.css'
 import ConfirmDeleteModal from './ConfirmDeleteModal';
+import NoExtensionsMessage from './NoExtensionsMessage';
 
 export default function ExtensionCard() {
     const [allExtensions, setAllExtensions] = useState(data)
@@ -79,6 +80,7 @@ export default function ExtensionCard() {
                     <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : ""}>Inactive ({inactiveExtensionsList.length})</button>
                 </div>
             </header>
+            {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right now." imageColor="#C7231A" /> : 
             <section className='extensions-list'>
             {filteredExtensions.map(item => (
                 <article key={item.name} className='extension card'>
@@ -105,6 +107,7 @@ export default function ExtensionCard() {
                 </article>
             ))}
             </section>
+            }
             {showModal && 
                 (< ConfirmDeleteModal
                     title="Delete Extension?"

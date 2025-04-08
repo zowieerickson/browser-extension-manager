@@ -1,0 +1,13 @@
+
+
+.no-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.no-results p.svg {
+    margin-top: 20px;
+}
