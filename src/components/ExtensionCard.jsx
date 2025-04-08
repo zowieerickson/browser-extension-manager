@@ -4,7 +4,7 @@ import '../styles/ExtensionCard.css'
 import ConfirmDeleteModal from './ConfirmDeleteModal';
 import NoExtensionsMessage from './NoExtensionsMessage';
 
-export default function ExtensionCard() {
+export default function ExtensionCard( {isDarkMode} ) {
     const [allExtensions, setAllExtensions] = useState(data)
     const [viewFilter, setViewFilter] = useState("all")
     const [justToggledId, setJustToggledId] = useState(null)
@@ -75,12 +75,12 @@ export default function ExtensionCard() {
             <header className='extensions-header'>
                 <h1 className='extensions-list-title'>Extensions List</h1>
                 <div className='extension-controls'>
-                    <button onClick={handleAll} className={viewFilter === "all" ? "btn-active" : ""}>All ({allExtensions.length})</button>
-                    <button onClick={handleActive} className={viewFilter === "active" ? "btn-active" : ""}>Active ({activeExtensionsList.length})</button>
-                    <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : ""}>Inactive ({inactiveExtensionsList.length})</button>
+                    <button onClick={handleAll} className={viewFilter === "all" && "btn-active"}>All ({allExtensions.length})</button>
+                    <button onClick={handleActive} className={viewFilter === "active" && "btn-active"}>Active ({activeExtensionsList.length})</button>
+                    <button onClick={handleInactive} className={viewFilter === "inactive" && "btn-active"}>Inactive ({inactiveExtensionsList.length})</button>
                 </div>
             </header>
-            {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right now." imageColor="#C7231A" /> : 
+            {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right now." imageColor={isDarkMode ? "#F25C54" : "#C7231A"} /> : 
             <section className='extensions-list'>
             {filteredExtensions.map(item => (
                 <article key={item.name} className='extension card'>
