@@ -70,7 +70,7 @@ export default function ExtensionCard( {isDarkMode} ) {
         setExtensionToDelete(id)
     }
     
-    return (
+    return (    
         <>
             <header className='extensions-header'>
                 <h1 className='extensions-list-title'>Extensions List</h1>
@@ -96,6 +96,11 @@ export default function ExtensionCard( {isDarkMode} ) {
                         <label className="switch">
                             <input 
                                 onChange={() => toggleChecked(item.name)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        toggleChecked(item.name)
+                                    }
+                                }}
                                 type="checkbox"
                                 checked={item.isActive}
                                 id="check"

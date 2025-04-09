@@ -3,7 +3,6 @@ import "../styles/ConfirmDeleteModal.css"
 export default function ConfirmDeleteModal({title, message, onConfirm, onCancel} ) {
     function handleOverlayClick(e) {
         if (e.target === e.currentTarget) { // currentTarget is what the event listener is attached to
-            console.log('yo')
             onCancel()
         }
     }
