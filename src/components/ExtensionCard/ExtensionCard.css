@@ -171,7 +171,3 @@
   .slider.round:before {
     border-radius: 50%;
   }
-
-  .slider:focus {
-    outline: 30px solid blue;
-  }

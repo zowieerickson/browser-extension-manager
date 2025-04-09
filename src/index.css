@@ -81,10 +81,6 @@
     transition: background 0.3s ease, color 0.3s ease;
   }
 
-*:focus {
-  outline: 1px solid var(--accent)
-}
-
 .dark-mode {
   --text-primary: #FBFDFE;
   --text-secondary: #C6C6C6;
