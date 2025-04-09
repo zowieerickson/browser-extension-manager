@@ -6,12 +6,10 @@ import NoExtensionsMessage from '../NoExtensionsMessage/NoExtensionsMessage.jsx'
 
 export default function ExtensionCard( {isDarkMode} ) {
     const [allExtensions, setAllExtensions] = useState(data)
+    const [selectedExtension, setSelectedExtension] = useState(null)
     const [viewFilter, setViewFilter] = useState("all")
     const [justToggledId, setJustToggledId] = useState(null)
     const [showModal, setShowModal] = useState(false)
-    const [extension, setExtension] = useState(null)
-    const [extensionImg, setExtensionImg] = useState(null)
-    const [selectedExtension, setSelectedExtension] = useState(null)
 
     const deleteExtension = (id) => {
         setAllExtensions(allExtensions.filter((extension) => extension.name !== id))
@@ -67,10 +65,7 @@ export default function ExtensionCard( {isDarkMode} ) {
     })
 
     const checkIfDeleteExtension = function(id) {
-        setExtensionImg(id.logo)
         setShowModal(true)
-        setExtension(id.name)
-        
         setSelectedExtension(id)
     }
     
@@ -120,7 +115,7 @@ export default function ExtensionCard( {isDarkMode} ) {
                 (< ConfirmDeleteModal
                     extensionImg={selectedExtension.logo}
                     title={`Remove "${selectedExtension.name}"?`}
-                    onConfirm={() => deleteExtension(extension)}
+                    onConfirm={() => deleteExtension(selectedExtension.name)}
                     onCancel={() => setShowModal(false)}
                 />)
             }
