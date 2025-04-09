@@ -79,7 +79,7 @@ export default function ExtensionCard( {isDarkMode} ) {
                     <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : undefined}>Inactive ({inactiveExtensionsList.length})</button>
                 </div>
             </header>
-            {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right now." imageColor={isDarkMode ? "#F25C54" : "#C7231A"} /> : 
+            {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right&nbsp;now." imageColor={isDarkMode ? "#F25C54" : "#C7231A"} /> : 
             <section className='extensions-list'>
             {filteredExtensions.map(item => (
                 <article key={item.name} className='extension card'>
