@@ -72,7 +72,6 @@ export default function ExtensionCard( {isDarkMode} ) {
         setExtension(id.name)
         
         setSelectedExtension(id)
-        console.log("Selected extensions", selectedExtension)
     }
     
     return (    
@@ -80,9 +79,9 @@ export default function ExtensionCard( {isDarkMode} ) {
             <header className='extensions-header'>
                 <h1 className='extensions-list-title'>Extensions List</h1>
                 <div className='extension-controls'>
-                    <button onClick={handleAll} className={viewFilter === "all" && "btn-active"}>All ({allExtensions.length})</button>
-                    <button onClick={handleActive} className={viewFilter === "active" && "btn-active"}>Active ({activeExtensionsList.length})</button>
-                    <button onClick={handleInactive} className={viewFilter === "inactive" && "btn-active"}>Inactive ({inactiveExtensionsList.length})</button>
+                    <button onClick={handleAll} className={viewFilter === "all" ? "btn-active" : undefined}>All ({allExtensions.length})</button>
+                    <button onClick={handleActive} className={viewFilter === "active" ? "btn-active" : undefined}>Active ({activeExtensionsList.length})</button>
+                    <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : undefined}>Inactive ({inactiveExtensionsList.length})</button>
                 </div>
             </header>
             {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right now." imageColor={isDarkMode ? "#F25C54" : "#C7231A"} /> : 
