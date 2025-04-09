@@ -18,8 +18,8 @@ export default function ConfirmDeleteModal({extensionImg, title, onConfirm, onCa
                     </div>
                 </div>
                 <div className="modal-actions">
-                    <button onClick={onConfirm}>Yes, delete it</button>
                     <button onClick={onCancel} className="btn-remove">Cancel</button>
+                    <button onClick={onConfirm} className="btn-remove">Remove</button>
                 </div>
             </div>
         </div>
