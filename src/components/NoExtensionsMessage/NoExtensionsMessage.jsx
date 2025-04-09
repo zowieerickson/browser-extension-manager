@@ -1,4 +1,4 @@
-import '../styles/NoExtensionsMessage.css'
+import './NoExtensionsMessage.css'
 
 
 export default function NoExtensionsMessage ( {title, description, imageColor} ) {

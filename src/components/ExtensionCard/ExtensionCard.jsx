@@ -1,18 +1,19 @@
 import { useState } from 'react';
-import data from '../data.json';
-import '../styles/ExtensionCard.css'
-import ConfirmDeleteModal from './ConfirmDeleteModal';
-import NoExtensionsMessage from './NoExtensionsMessage';
+import data from '../../data.json';
+import './ExtensionCard.css'
+import ConfirmDeleteModal from '../ConfirmDeleteModal/ConfirmDeleteModal.jsx';
+import NoExtensionsMessage from '../NoExtensionsMessage/NoExtensionsMessage.jsx';
 
 export default function ExtensionCard( {isDarkMode} ) {
     const [allExtensions, setAllExtensions] = useState(data)
     const [viewFilter, setViewFilter] = useState("all")
     const [justToggledId, setJustToggledId] = useState(null)
     const [showModal, setShowModal] = useState(false)
-    const [extensionToDelete, setExtensionToDelete] = useState(null)
+    const [extension, setExtension] = useState(null)
+    const [extensionImg, setExtensionImg] = useState(null)
+    const [selectedExtension, setSelectedExtension] = useState(null)
 
     const deleteExtension = (id) => {
-        console.log("deleting")
         setAllExtensions(allExtensions.filter((extension) => extension.name !== id))
         setShowModal(false)
     }
@@ -20,7 +21,7 @@ export default function ExtensionCard( {isDarkMode} ) {
     const toggleChecked = (id) => {
         setJustToggledId(id)
 
-        setAllExtensions(prevExtensions => 
+        setAllExtensions(prevExtensions =>
             prevExtensions.map(ext => {
                 if (ext.name === id) {
                     return {...ext, isActive: !ext.isActive}
@@ -66,8 +67,12 @@ export default function ExtensionCard( {isDarkMode} ) {
     })
 
     const checkIfDeleteExtension = function(id) {
+        setExtensionImg(id.logo)
         setShowModal(true)
-        setExtensionToDelete(id)
+        setExtension(id.name)
+        
+        setSelectedExtension(id)
+        console.log("Selected extensions", selectedExtension)
     }
     
     return (    
@@ -92,7 +97,7 @@ export default function ExtensionCard( {isDarkMode} ) {
                         </div>
                     </div>
                     <div className='card-settings'>
-                        <button onClick={() => checkIfDeleteExtension(item.name)} className='btn-remove'>Remove</button>
+                        <button onClick={() => checkIfDeleteExtension(item)} className='btn-remove'>Remove</button>
                         <label className="switch">
                             <input 
                                 onChange={() => toggleChecked(item.name)}
@@ -114,9 +119,9 @@ export default function ExtensionCard( {isDarkMode} ) {
             }
             {showModal && 
                 (< ConfirmDeleteModal
-                    title="Delete Extension?"
-                    message="Are you sure you want to delete this extension?"
-                    onConfirm={() => deleteExtension(extensionToDelete)}
+                    extensionImg={selectedExtension.logo}
+                    title={`Remove "${selectedExtension.name}"?`}
+                    onConfirm={() => deleteExtension(extension)}
                     onCancel={() => setShowModal(false)}
                 />)
             }

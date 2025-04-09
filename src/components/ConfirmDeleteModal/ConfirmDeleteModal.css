@@ -21,6 +21,12 @@
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+.modal-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
 .modal-actions {
     display: flex;
     justify-content: flex-end;

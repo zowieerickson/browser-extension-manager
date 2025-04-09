@@ -1,6 +1,6 @@
-import '../styles/Header.css'
-import PageTitle from './PageTitle'
-import ThemeToggle from './ThemeToggle'
+import './Header.css'
+import PageTitle from '../PageTitle'
+import ThemeToggle from '../ThemeToggle'
 
 export default function Header( {isDarkMode, setIsDarkMode} ) {
 
