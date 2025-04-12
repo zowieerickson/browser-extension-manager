@@ -136,7 +136,7 @@
 }
 
 .switch input[type="checkbox"] {
-    opacity: 1;
+    opacity: 0;
     width: 100%;
     border-radius: 36px;
     height: 20px;
