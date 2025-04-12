@@ -3,6 +3,7 @@ import data from '../../data.json';
 import './ExtensionCard.css'
 import ConfirmDeleteModal from '../ConfirmDeleteModal/ConfirmDeleteModal.jsx';
 import NoExtensionsMessage from '../NoExtensionsMessage/NoExtensionsMessage.jsx';
+import { capitalizeFirstLetter } from '../../utils/stringUtils.js'
 
 export default function ExtensionCard( {isDarkMode} ) {
     const [allExtensions, setAllExtensions] = useState(data)
@@ -68,6 +69,8 @@ export default function ExtensionCard( {isDarkMode} ) {
         setShowModal(true)
         setSelectedExtension(id)
     }
+
+    capitalizeFirstLetter("active!")
     
     return (    
         <>
@@ -79,7 +82,7 @@ export default function ExtensionCard( {isDarkMode} ) {
                     <button onClick={handleInactive} className={viewFilter === "inactive" ? "btn-active" : undefined}>Inactive ({inactiveExtensionsList.length})</button>
                 </div>
             </header>
-            {filteredExtensions.length == 0 ? <NoExtensionsMessage title="No Active Extensions" description="You don't have any active extensions right&nbsp;now." imageColor={isDarkMode ? "#F25C54" : "#C7231A"} /> : 
+            {filteredExtensions.length == 0 ? <NoExtensionsMessage title={`No ${viewFilter === 'all' ? '' : capitalizeFirstLetter(viewFilter)} Extensions`} description={`You don't have any ${viewFilter === 'all' ? '' : viewFilter} extensions right\u00A0now.`} imageColor={isDarkMode ? "#F25C54" : "#C7231A"} /> : 
             <section className='extensions-list'>
             {filteredExtensions.map(item => (
                 <article key={item.name} className='extension card'>
